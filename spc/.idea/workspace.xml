@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e875079-de5b-4e4f-a02e-add8bfc060d3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arquivos/telas/_7_telas.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arquivos/telas/7_telas.png" afterPath="$PROJECT_DIR$/arquivos/telas/7_telas.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mockups.html" afterPath="$PROJECT_DIR$/mockups.html" />
     </list>
     <ignored path="spc.iws" />
@@ -30,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/mockups.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6315789">
-              <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
+              <caret line="94" column="101" selection-start-line="94" selection-start-column="101" selection-end-line="94" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -253,7 +251,7 @@
     <entry file="file://$PROJECT_DIR$/mockups.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6315789">
-          <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
+          <caret line="94" column="101" selection-start-line="94" selection-start-column="101" selection-end-line="94" selection-end-column="101" />
           <folding />
         </state>
       </provider>
