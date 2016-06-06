@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e875079-de5b-4e4f-a02e-add8bfc060d3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arquivos/Fazer_Chamada.pdf" afterPath="$PROJECT_DIR$/arquivos/Fazer_Chamada.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arquivos/Gerenciar_Alunos.pdf" afterPath="$PROJECT_DIR$/arquivos/Gerenciar_Alunos.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/der.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/artefatos.html" afterPath="$PROJECT_DIR$/artefatos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diagramas.html" afterPath="$PROJECT_DIR$/diagramas.html" />
     </list>
     <ignored path="spc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,12 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="artefatos.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/artefatos.html">
+      <file leaf-file-name="diagramas.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/diagramas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4125874">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.21328671">
+              <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#div#7;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,6 +48,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mockups.html" />
+        <option value="$PROJECT_DIR$/artefatos.html" />
         <option value="$PROJECT_DIR$/diagramas.html" />
       </list>
     </option>
@@ -161,6 +165,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/arquivos" />
       <recent name="$PROJECT_DIR$/arquivos/telas" />
     </key>
@@ -251,16 +256,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diagramas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8951049">
-          <caret line="108" column="61" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#div#7;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mockups.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60314685">
@@ -276,9 +271,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/artefatos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4125874">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.47202796">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#13;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagramas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21328671">
+          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#7;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
