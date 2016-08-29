@@ -44,7 +44,11 @@ $(function(){
         for(var i = 0; i < matriz.length; i++) {
             var row = '<tr>';
             for(var j = 0; j < matriz[i].length; j++) {
-                row += '<td>' + matriz[i][j] + '</td>';
+                if( j + 1 == matriz[i].length ) {
+                    row += '<td style="background: #b40000;"><font color="white">' + Math.round(matriz[i][j]) + '</font></td>';
+                } else {
+                    row += '<td>' + Math.round(matriz[i][j]) + '</td>';
+                }
             }
             row += '</tr>';
 
