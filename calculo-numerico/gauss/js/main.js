@@ -67,9 +67,9 @@ $(function(){
 			}
 		}
 		
-		$('#val1').text(sltn[0]);
-		$('#val2').text(sltn[1]);
-		$('#val3').text(sltn[2]);
+		$('#val1').text(Number(sltn[0]));
+		$('#val2').text(Number(sltn[1]));
+		$('#val3').text(Number(sltn[2]));
 			
 
         // Escreve o resultado
