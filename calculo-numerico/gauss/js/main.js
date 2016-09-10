@@ -67,9 +67,9 @@ $(function(){
 			}
 		}
 		
-		$('#val1').text(Number(sltn[0]));
-		$('#val2').text(Number(sltn[1]));
-		$('#val3').text(Number(sltn[2]));
+		$('#val1').text(Math.round(sltn[0]));
+		$('#val2').text(Math.round(sltn[1]));
+		$('#val3').text(Math.round(sltn[2]));
 			
 
         // Escreve o resultado
