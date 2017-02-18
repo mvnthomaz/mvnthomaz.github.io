@@ -38,6 +38,39 @@ $(function(){
             }
             m++;
         }
+		
+		
+		/*
+    	for(int i = n - 1; i != -1; i--){
+            if (i == (n - 1)) {
+                sltn[i] = (matrix[i][buffer - 1]) / matrix[i][i];
+            } else {
+                sltn[i] = (matrix[i][buffer - 1] - somatoria(i)) / matrix[i][i];
+            }
+        }			
+			
+		*/
+		var n = matriz.length;
+		var sltn = new Array(n);
+    	for(var i = n - 1; i != -1; i--){
+			if (i == (n - 1)) {
+				sltn[i] = (matriz[i][cols - 1]) / matriz[i][i];
+			} else {
+		        
+				var somatorio = 0;
+				for(var j = i + 1; j != n; j++){
+		           	somatorio += (matriz[i][j])*sltn[j];
+		        }
+				
+				
+				sltn[i] = (matriz[i][cols - 1] - somatorio) / matriz[i][i];
+			}
+		}
+		
+		$('#val1').text(Math.round(sltn[0]));
+		$('#val2').text(Math.round(sltn[1]));
+		$('#val3').text(Math.round(sltn[2]));
+			
 
         // Escreve o resultado
         $('#wait_result').find('tbody').html('');
@@ -57,6 +90,20 @@ $(function(){
 
 
     });
+
+/*
+	
+    public double somatoria(int i){
+        double somatoria = 0;
+        for(int j = i + 1; j != n; j++){
+                somatoria += (matrix[i][j])*sltn[j];
+        }
+        return somatoria;
+    }
+	
+*/ 
+
+
 
     function doMatriz(rowI, colI) {
         rows = rowI;
