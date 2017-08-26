@@ -15,7 +15,9 @@ $(function(){
 
     $('#bt_calcular').on('click', function(){
         
-             
+        var multiplicadores = new Array();
+
+        
         var items = [
               [3, 2, 0, 1, 3], // 0 
               [9, 8, -3, 4, 6 ], // 1
@@ -23,13 +25,12 @@ $(function(){
                 [3,-8,3,-8,22]// 2
             ];
 
-        
         // Obtem os valores
         var matriz = new Array(rows);
         for(var i = 0; i < rows; i++) {
             var mCol = new Array(cols);
             for(var j = 0; j < cols; j++) {
-                //mCol[j] = Number($('#field_' + i + '_' + j).val());
+                // mCol[j] = Number($('#field_' + i + '_' + j).val());
                 mCol[j] = items[i][j];
                 
                 $('#field_' + i + '_' + j).val(items[i][j]);
@@ -47,8 +48,9 @@ $(function(){
                 }
                                 
                 var multiplicador = matriz[i][m] / matriz[m][m];
-                            
                 
+                multiplicadores[m] = multiplicador;
+                                        
                 for(var j = 0; j < matriz[i].length; j++) { // coluna
                     var r = matriz[i][j] - (multiplicador * matriz[m][j]);
                     
@@ -77,14 +79,9 @@ $(function(){
         }			
 		*/
         
-        var thead = "";
-        var tbody = "";
-        
 		var n = matriz.length;
 		var sltn = new Array(n);
-        var i1 = 1;
     	for(var i = n - 1; i != -1; i--){
-            
 			if (i == (n - 1)) {
 				sltn[i] = (matriz[i][cols - 1]) / matriz[i][i];
 			} else {
@@ -93,22 +90,17 @@ $(function(){
 				for(var j = i + 1; j != n; j++){
 		           	somatorio += (matriz[i][j])*sltn[j];
 		        }
-
+				
 				sltn[i] = (matriz[i][cols - 1] - somatorio) / matriz[i][i];
 			}
-            
-            thead += '<th>X' + (i1++) + '</th>';
-            tbody += '<td>' + Math.round(sltn[i]) + '</td>';
 		}
         
-        thead = '<tr>' + thead + '</tr>';
-        tbody = '<tr>' + tbody + '</tr>';
+        console.log(sltn);
 		
-        $('#table_x').find('thead').append(thead);
-        
-        $('#table_x').find('tbody').append(tbody);
-        
-
+		$('#val1').text(Math.round(sltn[0]));
+		$('#val2').text(Math.round(sltn[1]));
+		$('#val3').text(Math.round(sltn[2]));
+			
 
         // Escreve o resultado
         $('#wait_result').find('tbody').html('');
