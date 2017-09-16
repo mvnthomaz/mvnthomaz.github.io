@@ -15,60 +15,70 @@ $(function(){
 
     $('#bt_calcular').on('click', function(){
         
-        var multiplicadores = new Array();
-
-        
+        /*
         var items = [
-              [3, 2, 0, 1, 3], // 0 
-              [9, 8, -3, 4, 6 ], // 1
-              [6,-6,3,-7,-16],
+                [3, 2, 0, 1, 3], // 0 
+                [9, 8, -3, 4, 6 ], // 1
+                [6,-6,3,-7,-16],
                 [3,-8,3,-8,22]// 2
             ];
-
+        */
+        
+        var items = [
+              [3, 3, 1, 7], // 0 
+              [2, 2, -1, 3], // 1
+              [1, -1, 5, 5] // 2
+            ];
+        
         // Obtem os valores
         var matriz = new Array(rows);
         for(var i = 0; i < rows; i++) {
             var mCol = new Array(cols);
             for(var j = 0; j < cols; j++) {
+                
                 // mCol[j] = Number($('#field_' + i + '_' + j).val());
                 mCol[j] = items[i][j];
                 
                 $('#field_' + i + '_' + j).val(items[i][j]);
+                
+                
+                // mCol[j] = Number($('#field_' + i + '_' + j).val());
+                // mCol[j] = items[i][j];
+                
+                // $('#field_' + i + '_' + j).val(items[i][j]);
             }
             matriz[i] = mCol;
         }
+            
+        
+        var multiplicadores = new Array(matriz.length);
+        
 
         // Aplica gauss
         var m = 0;
         while( m < matriz.length ) {
+            var multiplicador = 0;
             for(var i = m + 1; i < matriz.length; i++) { // linha
 
                 if( matriz[m][m] == 0 ) {
                     matriz = comutarLinha(matriz, m, i);
                 }
-                                
-                var multiplicador = matriz[i][m] / matriz[m][m];
                 
-                multiplicadores[m] = multiplicador;
-                                        
+                multiplicador = matriz[i][m] / matriz[m][m];
+                
                 for(var j = 0; j < matriz[i].length; j++) { // coluna
                     var r = matriz[i][j] - (multiplicador * matriz[m][j]);
-                    
-                    
-                    
+                                        
                     matriz[i][j] = r;
                 }
             }
-            m++;
+            multiplicadores[m] = multiplicador;
             
+            m++;
         }
         
-        // console.log(m);
-		
-        
-        
-        
-		
+        console.log(multiplicadores);
+        		
 		/*
     	for(int i = n - 1; i != -1; i--){
             if (i == (n - 1)) {
@@ -79,9 +89,43 @@ $(function(){
         }			
 		*/
         
+        var matrizL = new Array(rows);
+        for (var i = 0; i < rows; i++) {
+            matrizL[i] = new Array(cols);
+        }
+        
+        var iM = 0;
+        for( var i = 0; i < matriz.length; i++ ) {
+            for( var j = 0; j < matriz[i].length-1 ; j++ ) {
+                if( i > j ) { // aplica os multiplicadores
+                    matrizL[i][j] = multiplicadores[iM++];
+                } else if( i < j ) { // aplica os zeros
+                    matrizL[i][j] = 0;
+                } else { // aplica os zeros
+                    matrizL[i][j] = 1;                    
+                }
+            }
+        }
+        
+        iM = 0;
+        for( var i = 0; i < matriz.length; i++ ) {
+             matrizL[i][iM] = matriz[i][iM++];
+        }
+                
+        console.log(matrizL);
+        
+        var thead = "";
+        var tbody = "";
+        
+        $('#table_x').find('thead').html('');
+        
+        $('#table_x').find('tbody').html('');
+        
 		var n = matriz.length;
 		var sltn = new Array(n);
+        var i1 = 1;
     	for(var i = n - 1; i != -1; i--){
+            
 			if (i == (n - 1)) {
 				sltn[i] = (matriz[i][cols - 1]) / matriz[i][i];
 			} else {
@@ -90,18 +134,20 @@ $(function(){
 				for(var j = i + 1; j != n; j++){
 		           	somatorio += (matriz[i][j])*sltn[j];
 		        }
-				
+
 				sltn[i] = (matriz[i][cols - 1] - somatorio) / matriz[i][i];
 			}
+            
+            thead += '<th>X' + (i1++) + '</th>';
+            tbody += '<td>' + Math.round(sltn[i]) + '</td>';
 		}
         
-        console.log(sltn);
+        thead = '<tr>' + thead + '</tr>';
+        tbody = '<tr>' + tbody + '</tr>';
 		
-		$('#val1').text(Math.round(sltn[0]));
-		$('#val2').text(Math.round(sltn[1]));
-		$('#val3').text(Math.round(sltn[2]));
-			
-
+        $('#table_x').find('thead').append(thead);
+        $('#table_x').find('tbody').append(tbody);
+        
         // Escreve o resultado
         $('#wait_result').find('tbody').html('');
         for(var i = 0; i < matriz.length; i++) {

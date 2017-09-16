@@ -15,24 +15,24 @@ $(function(){
 
     $('#bt_calcular').on('click', function(){
         
-             
+        /*
         var items = [
-              [3, 2, 0, 1, 3], // 0 
-              [9, 8, -3, 4, 6 ], // 1
-              [6,-6,3,-7,-16],
+                [3, 2, 0, 1, 3], // 0 
+                [9, 8, -3, 4, 6 ], // 1
+                [6,-6,3,-7,-16],
                 [3,-8,3,-8,22]// 2
             ];
-
+        */
         
         // Obtem os valores
         var matriz = new Array(rows);
         for(var i = 0; i < rows; i++) {
             var mCol = new Array(cols);
             for(var j = 0; j < cols; j++) {
-                //mCol[j] = Number($('#field_' + i + '_' + j).val());
-                mCol[j] = items[i][j];
+                mCol[j] = Number($('#field_' + i + '_' + j).val());
+                // mCol[j] = items[i][j];
                 
-                $('#field_' + i + '_' + j).val(items[i][j]);
+                // $('#field_' + i + '_' + j).val(items[i][j]);
             }
             matriz[i] = mCol;
         }
@@ -45,27 +45,17 @@ $(function(){
                 if( matriz[m][m] == 0 ) {
                     matriz = comutarLinha(matriz, m, i);
                 }
-                                
+                
                 var multiplicador = matriz[i][m] / matriz[m][m];
-                            
                 
                 for(var j = 0; j < matriz[i].length; j++) { // coluna
                     var r = matriz[i][j] - (multiplicador * matriz[m][j]);
-                    
-                    
-                    
+                                        
                     matriz[i][j] = r;
                 }
             }
             m++;
-            
         }
-        
-        // console.log(m);
-		
-        
-        
-        
 		
 		/*
     	for(int i = n - 1; i != -1; i--){
@@ -77,8 +67,14 @@ $(function(){
         }			
 		*/
         
+        
+        
         var thead = "";
         var tbody = "";
+        
+        $('#table_x').find('thead').html('');
+        
+        $('#table_x').find('tbody').html('');
         
 		var n = matriz.length;
 		var sltn = new Array(n);
