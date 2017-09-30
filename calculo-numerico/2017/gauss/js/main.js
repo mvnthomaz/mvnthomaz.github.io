@@ -112,9 +112,9 @@ $(function(){
             var row = '<tr>';
             for(var j = 0; j < matriz[i].length; j++) {
                 if( j + 1 == matriz[i].length ) {
-                    row += '<td style="background: #000000;"><font color="white">' + Math.round(matriz[i][j]) + '</font></td>';
+                    row += '<td style="background: #000000;"><font color="white">' + /*Math.round*/(matriz[i][j]) + '</font></td>';
                 } else {
-                    row += '<td>' + Math.round(matriz[i][j]) + '</td>';
+                    row += '<td>' + /*Math.round*/(matriz[i][j]) + '</td>';
                 }
             }
             row += '</tr>';
