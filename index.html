@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    $.get(
-         url: 'data.json',
-         dataType: 'json', 
-          function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
-          });
-  });
-});
-</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=4e6ff18bfadc4129846e80bbc88ca1a1", function (data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+        }).fail(function(jqXHR, textStatus, errorThrown){
+          console.log(jqXHR.responseJSON)
+        });
+      });
+    });
+  </script>
 </head>
+
 <body>
 
-<button>Send an HTTP GET request to a page and get the result back</button>
+  <button>Send an HTTP GET request to a page and get the result back</button>
 
 </body>
+
 </html>
